@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0B3A8C;
+  --color-royal: #1565C0;
+  --color-cyan: #00A8F0;
+  --color-tint: #EAF5FF;
+  --color-dark: #0A1A33;
+  --color-muted: #5B6B82;
+  --color-border-subtle: #E1ECF8;
+  --font-heading: 'Rajdhani', 'Exo 2', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #0A1A33;
+  background-color: #FFFFFF;
+}
+
+/* Custom Utilities and Animations */
+.brand-gradient {
+  background: linear-gradient(135deg, #0B3A8C 0%, #1565C0 50%, #00A8F0 100%);
+}
+
+.brand-gradient-hover:hover {
+  background: linear-gradient(135deg, #092c6b 0%, #0f4e96 50%, #0090cf 100%);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, #0B3A8C 0%, #1565C0 50%, #00A8F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-gradient-border {
+  border-image: linear-gradient(135deg, #0B3A8C 0%, #1565C0 50%, #00A8F0 100%) 1;
+}
+
+.soft-blue-shadow {
+  box-shadow: 0 10px 30px -5px rgba(21, 101, 192, 0.08), 0 4px 12px -2px rgba(11, 58, 140, 0.04);
+}
+
+.soft-blue-shadow-lg {
+  box-shadow: 0 20px 40px -10px rgba(11, 58, 140, 0.12), 0 8px 20px -4px rgba(0, 168, 240, 0.08);
+}
+
+.soft-blue-shadow-hover:hover {
+  box-shadow: 0 22px 45px -8px rgba(11, 58, 140, 0.16), 0 10px 24px -4px rgba(0, 168, 240, 0.14);
+}
+
+/* Pixel dot and tech grid pattern background */
+.tech-grid-pattern {
+  background-image: radial-gradient(rgba(21, 101, 192, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.tech-dot-pattern {
+  background-image: radial-gradient(#00A8F0 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 5s ease-in-out infinite;
+}
+
+.font-heading {
+  font-family: 'Rajdhani', sans-serif;
+}

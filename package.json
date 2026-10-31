@@ -1,0 +1,28 @@
+{
+  "name": "risnext",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "postinstall": "node -e \"const fs = require('fs'); ['node_modules/vite/dist/node/chunks/node.js', 'node_modules/vite/dist/node/module-runner.js'].forEach(p => { if (fs.existsSync(p)) { let c = fs.readFileSync(p, 'utf-8'); c = c.replace(/const postfixRE = \\/\\[\\?\\#\\]\\.\\*\\$\\/;/g, 'const postfixRE = /[?].*$|#(?![\/\\\\]).*$/;'); fs.writeFileSync(p, c); } });\""
+  },
+  "dependencies": {
+    "lucide-react": "^1.65.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Sparkles, PhoneCall, LogIn, ChevronRight } from 'lucide-react';
+import { Menu, X, ArrowRight, PhoneCall, LogIn, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
 import CTAButton from './CTAButton';
 
@@ -28,8 +28,9 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Courses', path: '/courses' },
-    { name: 'Why RIS NextGen', path: '/#why-us', isAnchor: true },
-    { name: 'Mentorship', path: '/#mentorship', isAnchor: true },
+    { name: 'Careers', path: '/careers' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
     { name: 'FAQ', path: '/#faq', isAnchor: true },
   ];
 
@@ -38,11 +39,11 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
       {/* Top micro announcement bar */}
       <div className="bg-gradient-to-r from-[#0B3A8C] via-[#1565C0] to-[#00A8F0] text-white text-[11px] sm:text-xs font-medium py-1.5 px-3 sm:px-4 text-center tracking-wide flex items-center justify-center gap-1.5 w-full max-w-full overflow-hidden">
         <div className="flex items-center gap-1.5 truncate max-w-full justify-center">
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#EAF5FF] animate-pulse shrink-0" />
-          <span className="truncate">
+
+          {/* <span className="truncate">
             Winter 2026 Cohorts: <strong>35% Early Bird Scholarship</strong>
-          </span>
-          <button 
+          </span> */}
+          <button
             onClick={() => onOpenEnroll?.()}
             className="shrink-0 hidden xs:inline-flex sm:inline-flex items-center gap-1 underline underline-offset-2 hover:text-[#EAF5FF] font-bold ml-1 cursor-pointer"
           >
@@ -52,12 +53,11 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
       </div>
 
       {/* Main Sticky Navbar */}
-      <header 
-        className={`sticky top-0 z-40 w-full max-w-full transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-md shadow-[#0B3A8C]/5 border-b border-[#D8E8F8]' 
-            : 'bg-white/90 backdrop-blur-sm border-b border-[#E1ECF8]'
-        }`}
+      <header
+        className={`sticky top-0 z-40 w-full max-w-full transition-all duration-300 ${scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-md shadow-[#0B3A8C]/5 border-b border-[#D8E8F8]'
+          : 'bg-white/90 backdrop-blur-sm border-b border-[#E1ECF8]'
+          }`}
       >
         <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20 w-full">
@@ -67,14 +67,14 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
             </div>
 
             {/* Desktop Navigation Links (>= lg: 1024px) */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
               {navLinks.map((link) => {
                 if (link.isAnchor) {
                   return (
                     <a
                       key={link.name}
                       href={link.path}
-                      className="px-3.5 py-2 rounded-lg text-sm font-semibold text-[#5B6B82] hover:text-[#0B3A8C] hover:bg-[#EAF5FF] transition-all"
+                      className="px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold text-[#5B6B82] hover:text-[#0B3A8C] hover:bg-[#EAF5FF] transition-all whitespace-nowrap"
                     >
                       {link.name}
                     </a>
@@ -86,10 +86,9 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
                     key={link.name}
                     to={link.path}
                     className={({ isActive }) =>
-                      `px-3.5 py-2 rounded-lg text-sm font-semibold transition-all relative ${
-                        isActive
-                          ? 'text-[#0B3A8C] bg-[#EAF5FF] font-bold'
-                          : 'text-[#5B6B82] hover:text-[#0B3A8C] hover:bg-[#EAF5FF]'
+                      `px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all relative whitespace-nowrap ${isActive
+                        ? 'text-[#0B3A8C] bg-[#EAF5FF] font-bold'
+                        : 'text-[#5B6B82] hover:text-[#0B3A8C] hover:bg-[#EAF5FF]'
                       }`
                     }
                   >
@@ -97,7 +96,7 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
                       <>
                         <span>{link.name}</span>
                         {isActive && (
-                          <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-gradient-to-r from-[#0B3A8C] to-[#00A8F0] rounded-full" />
+                          <span className="absolute bottom-0 left-2 right-2 xl:left-3 xl:right-3 h-0.5 bg-gradient-to-r from-[#0B3A8C] to-[#00A8F0] rounded-full" />
                         )}
                       </>
                     )}
@@ -187,10 +186,9 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
-                      `flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                        isActive
-                          ? 'bg-[#EAF5FF] text-[#0B3A8C] font-bold'
-                          : 'text-[#5B6B82] hover:bg-[#EAF5FF] hover:text-[#0B3A8C]'
+                      `flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${isActive
+                        ? 'bg-[#EAF5FF] text-[#0B3A8C] font-bold'
+                        : 'text-[#5B6B82] hover:bg-[#EAF5FF] hover:text-[#0B3A8C]'
                       }`
                     }
                   >

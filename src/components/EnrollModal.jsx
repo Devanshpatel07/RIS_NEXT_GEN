@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, ShieldCheck, Sparkles, CreditCard } from 'lucide-react';
-import { courses } from '../data/courses';
+import { X, CheckCircle2, ShieldCheck, Sparkles, CreditCard, Calendar } from 'lucide-react';
+import { courses, RESERVATION_BATCHES } from '../data/courses';
 import CTAButton from './CTAButton';
+import { ApiService } from '../services/api';
+import { DatabaseService } from '../services/db';
 
 export default function EnrollModal({ isOpen, onClose, selectedCourse, onSuccess }) {
   const [courseId, setCourseId] = useState(selectedCourse?.id || courses[0]?.id);
@@ -9,10 +11,11 @@ export default function EnrollModal({ isOpen, onClose, selectedCourse, onSuccess
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [cohortDate, setCohortDate] = useState('15 Nov 2026 (Weekend Batch)');
+  const [selectedBatchId, setSelectedBatchId] = useState(RESERVATION_BATCHES[0].id);
   const [paymentOption, setPaymentOption] = useState('emi'); // 'emi' or 'full'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDone, setIsDone] = useState(false);
+  const [reservationReceipt, setReservationReceipt] = useState(null);
 
   // Sync courseId when selectedCourse prop changes without cascading effect
   if (selectedCourse?.id && selectedCourse.id !== prevSelectedId) {
@@ -23,19 +26,41 @@ export default function EnrollModal({ isOpen, onClose, selectedCourse, onSuccess
   if (!isOpen) return null;
 
   const currentCourse = courses.find((c) => c.id === courseId) || courses[0];
+  const selectedBatch = RESERVATION_BATCHES.find((b) => b.id === selectedBatchId) || RESERVATION_BATCHES[0];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    const reservationPayload = {
+      courseId: currentCourse.id,
+      courseTitle: currentCourse.title,
+      fullName: name.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      batchId: selectedBatch.id,
+      batchLabel: selectedBatch.label,
+      batchDate: selectedBatch.date,
+      paymentOption,
+      fee: currentCourse.price
+    };
+
+    try {
+      const result = await ApiService.submitCourseReservation(reservationPayload);
+      setReservationReceipt(result);
+    } catch {
+      const fallback = DatabaseService.saveReservation(reservationPayload);
+      setReservationReceipt(fallback);
+    } finally {
       setIsSubmitting(false);
       setIsDone(true);
       if (onSuccess) onSuccess();
-    }, 700);
+    }
   };
 
   const handleClose = () => {
     setIsDone(false);
+    setReservationReceipt(null);
     onClose();
   };
 
@@ -69,19 +94,59 @@ export default function EnrollModal({ isOpen, onClose, selectedCourse, onSuccess
         {/* Modal Body */}
         <div className="p-6 overflow-y-auto flex-1">
           {isDone ? (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-4">
+            <div className="text-center py-6">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-3">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="font-['Rajdhani'] font-bold text-3xl text-[#0A1A33] mb-2">
+              <h4 className="font-['Rajdhani'] font-bold text-3xl text-[#0A1A33] mb-1">
                 Seat Reserved Successfully!
               </h4>
-              <p className="text-sm text-[#5B6B82] max-w-md mx-auto mb-6">
-                Congratulations, <strong className="text-[#0A1A33]">{name}</strong>! Your provisional enrollment in <strong className="text-[#0B3A8C]">{currentCourse.title}</strong> has been secured. Your welcome kit and login credentials have been dispatched to <strong className="text-[#0A1A33]">{email}</strong>.
+              <p className="text-xs text-[#5B6B82] mb-5">
+                Provisional enrollment confirmation & academic verification receipt
               </p>
-              <div className="p-4 rounded-2xl bg-[#EAF5FF] border border-[#CBE5FC] text-xs text-[#0B3A8C] max-w-md mx-auto mb-6">
-                <strong>Next Step:</strong> Your dedicated student success manager will call you at <strong>{phone}</strong> to guide you through your onboarding schedule.
+
+              {/* Confirmed Details Summary Card */}
+              <div className="p-4 rounded-2xl bg-[#F8FBFE] border border-[#D8E8F8] text-left max-w-md mx-auto mb-5 space-y-2.5 text-xs shadow-xs">
+                <div className="flex items-center justify-between pb-2 border-b border-[#E1ECF8]">
+                  <span className="text-[#5B6B82]">Reservation ID:</span>
+                  <span className="font-mono font-bold text-[#0B3A8C]">{reservationReceipt?.reservationId || reservationReceipt?.id || 'RSV-2026-CONFIRMED'}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#5B6B82]">Student Name:</span>
+                  <span className="font-semibold text-[#0A1A33]">{name}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#5B6B82]">Program:</span>
+                  <span className="font-semibold text-[#0A1A33] line-clamp-1">{currentCourse.title}</span>
+                </div>
+
+                {/* Prominently Display Confirmed Batch */}
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#EAF5FF] border border-[#00A8F0]/40">
+                  <span className="font-bold text-[#0B3A8C] flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-[#00A8F0]" />
+                    Confirmed Batch:
+                  </span>
+                  <span className="font-bold text-[#0B3A8C] text-sm">
+                    {selectedBatch.label}: {selectedBatch.date}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-[#5B6B82]">Payment Preference:</span>
+                  <span className="font-semibold text-[#0A1A33]">
+                    {paymentOption === 'emi' ? 'Zero-Cost EMI' : 'One-Time Payment'}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#5B6B82]">Official Live Class Time:</span>
+                  <span className="font-semibold text-[#0A1A33]">6:00 PM IST (Online)</span>
+                </div>
               </div>
+
+              <div className="p-3.5 rounded-2xl bg-[#EAF5FF] border border-[#CBE5FC] text-xs text-[#0B3A8C] max-w-md mx-auto mb-6">
+                <strong>Next Step:</strong> Welcome kit and LMS portal credentials have been dispatched to <strong>{email}</strong>. Your academic advisor will contact you at <strong>{phone}</strong> before your batch commences on <strong>{selectedBatch.date}</strong>.
+              </div>
+
               <CTAButton variant="gradient" size="md" onClick={handleClose}>
                 Done & Return to Courses
               </CTAButton>
@@ -179,28 +244,44 @@ export default function EnrollModal({ isOpen, onClose, selectedCourse, onSuccess
 
               {/* Cohort Date Selection */}
               <div>
-                <label className="block text-xs font-semibold text-[#0A1A33] mb-1">
-                  Select Cohort Timing
-                </label>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  {[
-                    '15 Nov 2026 (Weekend Batch)',
-                    '25 Nov 2026 (Weekday Evening)'
-                  ].map((batch) => (
-                    <button
-                      key={batch}
-                      type="button"
-                      onClick={() => setCohortDate(batch)}
-                      className={`p-2.5 rounded-xl border text-left flex items-center justify-between cursor-pointer ${
-                        cohortDate === batch
-                          ? 'border-[#00A8F0] bg-[#EAF5FF] text-[#0B3A8C] font-bold'
-                          : 'border-[#D8E8F8] text-[#5B6B82] hover:bg-slate-50'
-                      }`}
-                    >
-                      <span>{batch}</span>
-                      {cohortDate === batch && <CheckCircle2 className="w-3.5 h-3.5 text-[#00A8F0]" />}
-                    </button>
-                  ))}
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="block text-xs font-semibold text-[#0A1A33]">
+                    Select Cohort Timing
+                  </label>
+                  <span className="text-[11px] text-[#00A8F0] font-semibold">
+                    Live 6:00 PM IST
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                  {RESERVATION_BATCHES.map((batch) => {
+                    const isSelected = selectedBatchId === batch.id;
+                    return (
+                      <button
+                        key={batch.id}
+                        type="button"
+                        onClick={() => setSelectedBatchId(batch.id)}
+                        className={`p-3 rounded-2xl border text-left flex flex-col justify-between transition-all cursor-pointer ${
+                          isSelected
+                            ? 'border-[#00A8F0] bg-[#EAF5FF] text-[#0B3A8C] font-bold shadow-xs ring-1 ring-[#00A8F0]'
+                            : 'border-[#D8E8F8] bg-white text-[#5B6B82] hover:bg-slate-50 hover:border-[#1565C0]/40'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className={`text-[11px] font-bold uppercase tracking-wider ${isSelected ? 'text-[#0B3A8C]' : 'text-[#5B6B82]'}`}>
+                            {batch.label}
+                          </span>
+                          {isSelected ? (
+                            <CheckCircle2 className="w-4 h-4 text-[#00A8F0] shrink-0" />
+                          ) : (
+                            <span className="w-4 h-4 rounded-full border border-[#D8E8F8] shrink-0" />
+                          )}
+                        </div>
+                        <span className={`text-xs ${isSelected ? 'text-[#0A1A33] font-bold' : 'text-[#0A1A33] font-medium'}`}>
+                          {batch.date}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 

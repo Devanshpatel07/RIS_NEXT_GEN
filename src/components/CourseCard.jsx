@@ -1,23 +1,22 @@
 import React from 'react';
-import { Star, Clock, Users, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Clock, ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import CTAButton from './CTAButton';
 
-export default function CourseCard({ course, onEnroll, onViewDetails }) {
+export default function CourseCard({ course, onEnroll, onViewDetails, showPrice = true }) {
   const {
     title,
     category,
     description,
     duration,
     mode,
-    rating,
-    reviewsCount,
+    level,
     price,
     oldPrice,
-    enrolledCount,
     badge,
     skills,
     image,
-    nextBatch
+    nextBatch,
+    registrationStatus
   } = course;
 
   const discountPercent = oldPrice ? Math.round(((oldPrice - price) / oldPrice) * 100) : 0;
@@ -66,26 +65,20 @@ export default function CourseCard({ course, onEnroll, onViewDetails }) {
 
       {/* Card Body */}
       <div className="flex flex-col flex-1 p-5 sm:p-6">
-        {/* Rating and Reviews */}
+        {/* Genuine Status & Level Row (No fake star ratings) */}
         <div className="flex items-center justify-between text-xs mb-2.5">
-          <div className="flex items-center gap-1.5 font-bold text-[#0A1A33]">
-            <div className="flex items-center text-amber-500">
-              <Star className="w-4 h-4 fill-amber-400 stroke-amber-500" />
-            </div>
-            <span className="text-sm font-extrabold">{rating}</span>
-            <span className="text-[#5B6B82] font-normal">({reviewsCount.toLocaleString()} reviews)</span>
+          <div className="flex items-center gap-1.5 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            <span>{registrationStatus || 'Registration Open'}</span>
           </div>
 
-          {enrolledCount && (
-            <div className="flex items-center gap-1 text-[#5B6B82] font-medium">
-              <Users className="w-3.5 h-3.5 text-[#1565C0]" />
-              <span>{enrolledCount}</span>
-            </div>
-          )}
+          <span className="text-[11px] font-medium text-[#5B6B82] bg-slate-100 px-2 py-0.5 rounded-md">
+            {level || 'All Levels'}
+          </span>
         </div>
 
         {/* Course Title */}
-        <h3 
+        <h3
           onClick={() => onViewDetails && onViewDetails(course)}
           className="font-['Rajdhani'] font-bold text-xl text-[#0A1A33] group-hover:text-[#1565C0] transition-colors leading-snug cursor-pointer line-clamp-2 mb-2"
         >
@@ -126,29 +119,28 @@ export default function CourseCard({ course, onEnroll, onViewDetails }) {
 
         {/* Pricing and Action Buttons (Pinned to bottom) */}
         <div className="mt-auto pt-4 border-t border-[#E1ECF8]">
-          <div className="flex items-baseline justify-between mb-4">
-            <div>
-              <div className="flex items-baseline gap-2">
-                <span className="font-['Rajdhani'] font-bold text-2xl text-[#0A1A33]">
-                  ₹{price.toLocaleString('en-IN')}
-                </span>
-                {oldPrice && (
-                  <span className="text-xs text-[#5B6B82] line-through">
-                    ₹{oldPrice.toLocaleString('en-IN')}
+          {showPrice && (
+            <div className="flex items-baseline justify-between mb-4">
+              <div>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-['Rajdhani'] font-bold text-2xl text-[#0A1A33]">
+                    ₹{price.toLocaleString('en-IN')}
                   </span>
-                )}
+                  {oldPrice && (
+                    <span className="text-xs text-[#5B6B82] line-through">
+                      ₹{oldPrice.toLocaleString('en-IN')}
+                    </span>
+                  )}
+                </div>
               </div>
-              <span className="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider block">
-                EMI starts ₹{Math.round(price / 12).toLocaleString('en-IN')}/mo
-              </span>
-            </div>
 
-            {discountPercent > 0 && (
-              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                {discountPercent}% OFF
-              </span>
-            )}
-          </div>
+              {discountPercent > 0 && (
+                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  {discountPercent}% OFF
+                </span>
+              )}
+            </div>
+          )}
 
           <div className="grid grid-cols-2 gap-2">
             <button

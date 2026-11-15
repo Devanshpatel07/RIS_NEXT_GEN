@@ -4,8 +4,8 @@ import {
   CheckCircle2, 
   Clock, 
   Video, 
-  Star, 
-  ArrowRight
+  ArrowRight,
+  ShieldCheck
 } from 'lucide-react';
 import CTAButton from './CTAButton';
 
@@ -18,13 +18,12 @@ export default function CourseDetailModal({ isOpen, onClose, course, onEnroll })
     description,
     duration,
     mode,
-    rating,
-    reviewsCount,
     price,
     oldPrice,
     skills,
     image,
-    nextBatch
+    nextBatch,
+    level
   } = course;
 
   const syllabusModules = [
@@ -82,11 +81,13 @@ export default function CourseDetailModal({ isOpen, onClose, course, onEnroll })
 
           {/* Bottom Title info */}
           <div className="absolute bottom-4 left-5 right-5 text-white">
-            <div className="flex items-center gap-3 text-xs mb-1.5 text-blue-200">
-              <span className="flex items-center gap-1 font-bold text-amber-400">
-                <Star className="w-4 h-4 fill-amber-400" />
-                {rating} ({reviewsCount} reviews)
+            <div className="flex flex-wrap items-center gap-3 text-xs mb-1.5 text-blue-200">
+              <span className="flex items-center gap-1 font-semibold text-emerald-300">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                Verified Curriculum &bull; {level || 'Intermediate'}
               </span>
+              <span>&bull;</span>
+              <span>Live 6:00 PM IST</span>
               <span>&bull;</span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-[#00A8F0]" />

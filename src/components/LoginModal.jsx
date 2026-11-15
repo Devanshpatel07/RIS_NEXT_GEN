@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, LogIn, CheckCircle2, User, Lock } from 'lucide-react';
+import { X, CheckCircle2, User, Lock } from 'lucide-react';
 import CTAButton from './CTAButton';
+import logoImg from '../assets/risnextgen logo.jpg';
 
 export default function LoginModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('learner@risnextgen.com');
@@ -39,14 +40,21 @@ export default function LoginModal({ isOpen, onClose }) {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center mb-3">
-            <LogIn className="w-5 h-5 text-white" />
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-12 h-12 rounded-2xl bg-white p-1 shadow-md shrink-0 flex items-center justify-center">
+              <img src={logoImg} alt="RIS NextGen" className="w-full h-full object-contain rounded-xl" />
+            </div>
+            <div>
+              <h3 className="font-['Rajdhani'] font-bold text-2xl leading-tight">
+                Student & Mentor Portal
+              </h3>
+              <p className="text-[11px] text-blue-100/90 font-medium">
+                RIS NextGen Unified Learning Hub
+              </p>
+            </div>
           </div>
-          <h3 className="font-['Rajdhani'] font-bold text-2xl">
-            Student & Mentor Portal
-          </h3>
-          <p className="text-xs text-blue-100/80 mt-1">
-            Access your live classrooms, class recordings, and assignment feedback.
+          <p className="text-xs text-blue-100/80">
+            Access your live cohorts, class recordings, and assignment feedback.
           </p>
         </div>
 

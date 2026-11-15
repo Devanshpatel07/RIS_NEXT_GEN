@@ -28,7 +28,7 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
     : 'All';
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('popular'); // 'popular', 'rating', 'price-low', 'price-high', 'newest'
+  const [sortBy, setSortBy] = useState('sequence'); // 'sequence', 'popular', 'rating', 'newest'
   const [selectedMode, setSelectedMode] = useState('all'); // 'all', 'live', 'hybrid'
 
   // Client-side filtering & sorting
@@ -57,10 +57,7 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
         return matchesCategory && matchesMode && matchesSearch;
       })
       .sort((a, b) => {
-        if (sortBy === 'popular') return (b.reviewsCount || 0) - (a.reviewsCount || 0);
-        if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
-        if (sortBy === 'price-low') return a.price - b.price;
-        if (sortBy === 'price-high') return b.price - a.price;
+        if (sortBy === 'sequence') return 0; // Maintain official order: Cybersecurity, AI/ML, etc.
         if (sortBy === 'newest') return (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0);
         return 0;
       });
@@ -189,10 +186,7 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
                   onChange={(e) => setSortBy(e.target.value)}
                   className="px-3 py-1.5 rounded-lg border border-[#D8E8F8] bg-white text-xs font-semibold text-[#0A1A33] focus:ring-2 focus:ring-[#00A8F0] focus:outline-none cursor-pointer"
                 >
-                  <option value="popular">Most Popular</option>
-                  <option value="rating">Highest Rated</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
+                  <option value="sequence">Official Sequence (Cybersecurity & AI First)</option>
                   <option value="newest">Featured Cohorts</option>
                 </select>
               </div>
@@ -393,13 +387,25 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
               Enroll in a Cohort
             </CTAButton>
 
-            <button
+            <CTAButton
+              variant="outline"
+              size="lg"
               onClick={() => onOpenCounselor && onOpenCounselor()}
-              className="px-8 py-4 rounded-2xl border-2 border-white/40 text-white font-bold hover:bg-white/10 transition-colors text-sm sm:text-base flex items-center gap-2 cursor-pointer"
+              className="border-white text-white hover:bg-white hover:text-[#0B3A8C]"
+              icon={PhoneCall}
+              iconPosition="left"
             >
-              <PhoneCall className="w-4 h-4 text-[#00A8F0]" />
-              <span>Request Free Callback</span>
-            </button>
+              Talk to a Counsellor
+            </CTAButton>
+
+            <CTAButton
+              variant="ghost"
+              size="lg"
+              to="/contact"
+              className="text-white hover:bg-white/10 hover:text-white"
+            >
+              Contact Us
+            </CTAButton>
           </div>
         </div>
       </section>

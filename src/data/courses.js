@@ -1,5 +1,4 @@
-// RIS NextGen - Courses Dataset
-// Edit or add courses below. Each course has clean metadata for filtering, sorting, and display.
+// RIS NextGen - Official Courses & Platform Dataset
 
 export const COURSE_CATEGORIES = [
   "All",
@@ -7,338 +6,366 @@ export const COURSE_CATEGORIES = [
   "Data Science",
   "Business",
   "Finance",
-  "Design",
-  "Career Skills"
+  "Design"
 ];
 
+// Official Launch Dates: 15 November 2026 & 21 November 2026
+// Course Sequence: 1. Cybersecurity, 2. AI/ML, 3. Other courses according to relevance.
 export const courses = [
   {
-    id: "fsd-cloud-01",
+    id: "cyber-defense-01",
+    title: "Cybersecurity, Ethical Hacking & Cloud Defense Fellowship",
+    category: "Technology",
+    description: "Master threat modeling, penetration testing, SIEM operations, zero-trust architectures, and incident response simulations with hands-on lab environments.",
+    duration: "18 Weeks",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 36999,
+    oldPrice: 55999,
+    enrolledCount: "120+ Enrolled",
+    badge: "Upcoming Launch • 15 Nov",
+    isFeatured: true,
+    isUpcoming: true,
+    launchDate: "15 November 2026",
+    registrationStatus: "Registration Open",
+    level: "Intermediate",
+    nextBatch: "Starts 15th Nov 2026 (Live 6:00 PM IST)",
+    scheduleType: "Weekday Evening & Weekend Labs",
+    skills: ["Network Security", "Kali Linux", "Wireshark", "Metasploit", "Cloud Security", "SIEM"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "ai-ml-02",
+    title: "Artificial Intelligence & Machine Learning (AI/ML) Master Fellowship",
+    category: "Technology",
+    description: "Build autonomous multi-agent pipelines, RAG architectures, neural networks, fine-tune foundation models, and deploy production AI microservices.",
+    duration: "16 Weeks",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 44999,
+    oldPrice: 69999,
+    enrolledCount: "140+ Enrolled",
+    badge: "Upcoming Launch • 21 Nov",
+    isFeatured: true,
+    isUpcoming: true,
+    launchDate: "21 November 2026",
+    registrationStatus: "Registration Open",
+    level: "Intermediate",
+    nextBatch: "Starts 21st Nov 2026 (Live 6:00 PM IST)",
+    scheduleType: "Weekday Evening & Weekend Labs",
+    skills: ["Python", "PyTorch", "LangChain", "Vector DBs", "RAG Systems", "MLOps"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "fsd-cloud-03",
     title: "Full Stack Software Engineering & Cloud Native Systems",
     category: "Technology",
-    description: "Master modern microservices, React 19, Node.js, Docker, Kubernetes, and AWS deployment with production-grade capstones.",
+    description: "Master modern microservices, React 19, Node.js, Docker, Kubernetes, and AWS cloud deployment with production-grade capstone architectures.",
     duration: "24 Weeks",
-    mode: "Live Interactive",
-    rating: 4.9,
-    reviewsCount: 1840,
+    mode: "100% Online Live (6:00 PM IST)",
     price: 38999,
     oldPrice: 59999,
-    enrolledCount: "4,200+",
-    badge: "Bestseller",
+    enrolledCount: "150+ Enrolled",
+    badge: "Popular Cohort",
     isFeatured: true,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
     level: "Beginner to Advanced",
-    nextBatch: "Starts 15th Nov 2026",
+    nextBatch: "Starts 28th Nov 2026",
+    scheduleType: "Weekday Evening (Post 5 PM) & Weekend Flexible",
     skills: ["React", "Node.js", "Docker", "AWS", "PostgreSQL", "Microservices"],
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "ai-llm-02",
-    title: "Generative AI, LLM Applications & Agentic Systems",
-    category: "Technology",
-    description: "Build autonomous multi-agent pipelines, RAG architecture, fine-tune models, and deploy production AI applications.",
-    duration: "16 Weeks",
-    mode: "Live Interactive",
-    rating: 4.95,
-    reviewsCount: 2150,
-    price: 44999,
-    oldPrice: 69999,
-    enrolledCount: "3,800+",
-    badge: "Trending 🔥",
-    isFeatured: true,
-    level: "Intermediate",
-    nextBatch: "Starts 12th Nov 2026",
-    skills: ["LangChain", "Vector DBs", "PyTorch", "OpenAI APIs", "Autonomous Agents"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "ds-ml-03",
+    id: "ds-ml-04",
     title: "Applied Data Science, Machine Learning & Big Data Analytics",
     category: "Data Science",
-    description: "From data wrangling to predictive analytics and MLOps. Work on real enterprise datasets with mentorship from Fortune 500 leads.",
+    description: "From data wrangling to predictive analytics, statistical modeling, and MLOps. Work on real enterprise datasets with mentorship from industry leads.",
     duration: "20 Weeks",
-    mode: "Live Interactive",
-    rating: 4.88,
-    reviewsCount: 1420,
+    mode: "100% Online Live (6:00 PM IST)",
     price: 34999,
     oldPrice: 54999,
-    enrolledCount: "2,950+",
-    badge: "High Placement Rate",
+    enrolledCount: "110+ Enrolled",
+    badge: "Core Track",
     isFeatured: true,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
     level: "All Levels",
-    nextBatch: "Starts 20th Nov 2026",
+    nextBatch: "Starts 30th Nov 2026",
+    scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Python", "Pandas", "Scikit-Learn", "Apache Spark", "Tableau", "MLOps"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "pm-exec-04",
-    title: "Strategic Product Management & Tech Leadership",
-    category: "Business",
-    description: "Drive product lifecycle from ideation to scale. Learn user research, PRD authoring, unit economics, and data-driven prioritization.",
-    duration: "14 Weeks",
-    mode: "Live Interactive",
-    rating: 4.85,
-    reviewsCount: 980,
-    price: 29999,
-    oldPrice: 47999,
-    enrolledCount: "1,850+",
-    badge: "Top Rated",
-    isFeatured: true,
-    level: "Beginner to Intermediate",
-    nextBatch: "Starts 18th Nov 2026",
-    skills: ["Product Strategy", "Wireframing", "A/B Testing", "Agile", "Metrics & KPIs"],
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "fintech-val-05",
-    title: "Corporate Financial Modeling, M&A & Fintech Valuation",
-    category: "Finance",
-    description: "Hands-on financial statement analysis, DCF valuation, venture capital deal structuring, and algorithmic trading foundations.",
-    duration: "16 Weeks",
-    mode: "Hybrid Live",
-    rating: 4.82,
-    reviewsCount: 840,
-    price: 31999,
-    oldPrice: 49999,
-    enrolledCount: "1,620+",
-    badge: "Industry Certified",
-    isFeatured: false,
-    level: "Intermediate to Advanced",
-    nextBatch: "Starts 25th Nov 2026",
-    skills: ["Financial Modeling", "Valuation", "LBO", "Equity Research", "Fintech APIs"],
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "cyber-defense-06",
-    title: "Cybersecurity, Ethical Hacking & Cloud Defense Fellowship",
-    category: "Technology",
-    description: "Master threat modeling, penetration testing, SIEM operations, zero-trust architectures, and incident response simulations.",
-    duration: "18 Weeks",
-    mode: "Live Interactive",
-    rating: 4.91,
-    reviewsCount: 1120,
-    price: 36999,
-    oldPrice: 55999,
-    enrolledCount: "2,100+",
-    badge: "High Demand",
-    isFeatured: false,
-    level: "Intermediate",
-    nextBatch: "Starts 10th Dec 2026",
-    skills: ["Network Security", "Kali Linux", "Wireshark", "Metasploit", "Cloud Security"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "uiux-design-07",
-    title: "Enterprise UI/UX Design & Design Systems Engineering",
-    category: "Design",
-    description: "Create scalable design systems in Figma, conduct cognitive walkthroughs, test user behaviors, and hand off pixel-perfect specs.",
-    duration: "12 Weeks",
-    mode: "Self-Paced + Live Mentorship",
-    rating: 4.89,
-    reviewsCount: 1320,
-    price: 24999,
-    oldPrice: 39999,
-    enrolledCount: "3,100+",
-    badge: "Portfolio Ready",
-    isFeatured: false,
-    level: "Beginner Friendly",
-    nextBatch: "Immediate Access + Weekly Live Q&A",
-    skills: ["Figma", "Design Tokens", "User Research", "Prototyping", "Micro-interactions"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "devops-sre-08",
+    id: "devops-sre-05",
     title: "Cloud DevOps, CI/CD Pipelines & Site Reliability Engineering",
     category: "Technology",
-    description: "Automate zero-downtime deployments with Terraform, GitHub Actions, Kubernetes, Prometheus, and Grafana monitoring.",
+    description: "Automate zero-downtime deployments with Terraform, GitHub Actions, Kubernetes, Prometheus, and Grafana infrastructure monitoring.",
     duration: "16 Weeks",
-    mode: "Live Interactive",
-    rating: 4.92,
-    reviewsCount: 1560,
+    mode: "100% Online Live (6:00 PM IST)",
     price: 37999,
     oldPrice: 58999,
-    enrolledCount: "2,740+",
-    badge: "Career Accelerator",
+    enrolledCount: "95+ Enrolled",
+    badge: "Industry Certified",
     isFeatured: false,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
     level: "Intermediate to Advanced",
     nextBatch: "Starts 5th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Kubernetes", "Terraform", "CI/CD", "Docker", "Prometheus", "AWS EKS"],
     image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "exec-comm-09",
-    title: "Executive Communication, Negotiation & Career Mastery",
-    category: "Career Skills",
-    description: "Propel into senior management. Hone cross-functional persuasion, executive presence, salary negotiation, and high-stakes pitching.",
-    duration: "8 Weeks",
-    mode: "Weekend Live Masterclasses",
-    rating: 4.87,
-    reviewsCount: 760,
-    price: 19999,
-    oldPrice: 29999,
-    enrolledCount: "1,450+",
-    badge: "Fast-Track",
+    id: "database-eng-06",
+    title: "Database Engineering & Modern Data Architecture (SQL & NoSQL)",
+    category: "Technology",
+    description: "Master structured database engines (PostgreSQL, Oracle, SQL) and unstructured NoSQL systems (MongoDB). Learn high-performance query optimization and replication.",
+    duration: "14 Weeks",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 32999,
+    oldPrice: 48999,
+    enrolledCount: "80+ Enrolled",
+    badge: "Hands-on Lab",
     isFeatured: false,
-    level: "All Professionals",
-    nextBatch: "Starts 22nd Nov 2026",
-    skills: ["Strategic Pitching", "Conflict Resolution", "Negotiation", "Leadership Presence"],
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "growth-mkt-10",
-    title: "Performance Marketing, SEO & Tech Growth Hacking",
-    category: "Business",
-    description: "Master omnichannel customer acquisition, conversion rate optimization (CRO), Meta/Google ad bidding algorithms, and retention loops.",
-    duration: "12 Weeks",
-    mode: "Live Interactive",
-    rating: 4.84,
-    reviewsCount: 920,
-    price: 22999,
-    oldPrice: 34999,
-    enrolledCount: "2,080+",
-    badge: "ROI Focused",
-    isFeatured: false,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
     level: "Beginner to Intermediate",
-    nextBatch: "Starts 28th Nov 2026",
-    skills: ["Meta Ads", "Google Ads", "Technical SEO", "Growth Loops", "GA4 Analytics"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    nextBatch: "Starts 8th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Labs",
+    skills: ["PostgreSQL", "Oracle Database", "SQL", "MongoDB", "Indexing", "Query Tuning"],
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "react-native-11",
+    id: "pm-exec-07",
+    title: "Strategic Product Management & Tech Leadership",
+    category: "Business",
+    description: "Drive product lifecycle from ideation to scale. Learn user research, PRD authoring, unit economics, data-driven prioritization, and roadmapping.",
+    duration: "14 Weeks",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 29999,
+    oldPrice: 47999,
+    enrolledCount: "85+ Enrolled",
+    badge: "Executive Track",
+    isFeatured: false,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
+    level: "Beginner to Intermediate",
+    nextBatch: "Starts 10th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Sessions",
+    skills: ["Product Strategy", "Wireframing", "A/B Testing", "Agile", "Metrics & KPIs"],
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "react-native-08",
     title: "Mobile App Development with React Native & Expo",
     category: "Technology",
-    description: "Build cross-platform iOS and Android apps with native device APIs, state management, offline support, and app store publishing.",
+    description: "Build cross-platform iOS and Android apps with native device APIs, state management, offline support, and app store deployment pipelines.",
     duration: "14 Weeks",
-    mode: "Live Interactive",
-    rating: 4.86,
-    reviewsCount: 1040,
+    mode: "100% Online Live (6:00 PM IST)",
     price: 29999,
     oldPrice: 45999,
-    enrolledCount: "1,980+",
-    badge: "Hands-on",
+    enrolledCount: "75+ Enrolled",
+    badge: "Project Driven",
     isFeatured: false,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
     level: "Intermediate",
-    nextBatch: "Starts 1st Dec 2026",
+    nextBatch: "Starts 12th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Sessions",
     skills: ["React Native", "Expo", "Redux Toolkit", "Native Modules", "App Store CI/CD"],
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "fin-wealth-12",
-    title: "Personal Wealth Management, Quant Trading & Derivatives",
-    category: "Finance",
-    description: "Learn algorithmic backtesting in Python, options trading strategies, risk hedging, and institutional portfolio management techniques.",
+    id: "uiux-design-09",
+    title: "Enterprise UI/UX Design & Design Systems Engineering",
+    category: "Design",
+    description: "Create scalable design systems in Figma, conduct cognitive walkthroughs, test user behaviors, and hand off production design specs.",
     duration: "12 Weeks",
-    mode: "Live Interactive",
-    rating: 4.81,
-    reviewsCount: 690,
-    price: 27999,
-    oldPrice: 42999,
-    enrolledCount: "1,340+",
-    badge: "Quant Edge",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 24999,
+    oldPrice: 39999,
+    enrolledCount: "90+ Enrolled",
+    badge: "Portfolio Ready",
     isFeatured: false,
-    level: "Intermediate",
-    nextBatch: "Starts 8th Dec 2026",
-    skills: ["Python for Finance", "Options Strategies", "Risk Hedging", "Portfolio Theory"],
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80"
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
+    level: "Beginner Friendly",
+    nextBatch: "Starts 15th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Labs",
+    skills: ["Figma", "Design Tokens", "User Research", "Prototyping", "Micro-interactions"],
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "fintech-val-10",
+    title: "Corporate Financial Modeling, M&A & Fintech Valuation",
+    category: "Finance",
+    description: "Hands-on financial statement analysis, DCF valuation, venture capital deal structuring, and algorithmic trading foundations.",
+    duration: "16 Weeks",
+    mode: "100% Online Live (6:00 PM IST)",
+    price: 31999,
+    oldPrice: 49999,
+    enrolledCount: "65+ Enrolled",
+    badge: "Finance Core",
+    isFeatured: false,
+    isUpcoming: false,
+    launchDate: "Ongoing Admissions",
+    registrationStatus: "Registration Open",
+    level: "Intermediate to Advanced",
+    nextBatch: "Starts 18th Dec 2026",
+    scheduleType: "Weekday Evening & Weekend Sessions",
+    skills: ["Financial Modeling", "Valuation", "LBO", "Equity Research", "Fintech APIs"],
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
-// Testimonials data for student reviews carousel
-export const testimonials = [
+// Official Cohort Reservation Batches
+// Three independent batches with specific starting dates (no weekday/weekend categorizations)
+export const RESERVATION_BATCHES = [
   {
-    id: 1,
-    name: "Arjun Sharma",
-    role: "Senior Full Stack Engineer at Swiggy",
-    former: "Former Junior Support Dev",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-    rating: 5,
-    courseTaken: "Full Stack & Cloud Native Systems",
-    review: "The curriculum at RIS NextGen is unmatched. The live architecture reviews and 1-on-1 mentor guidance helped me transition from a support role to an SDE-2 with a 140% salary hike.",
-    highlight: "140% Salary Hike"
+    id: "batch-1",
+    label: "Batch 1",
+    date: "21 November 2026"
   },
   {
-    id: 2,
-    name: "Pooja Krishnamurthy",
-    role: "AI Application Specialist at Zomato",
-    former: "Former Python Developer",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-    rating: 5,
-    courseTaken: "Generative AI & LLM Systems",
-    review: "Unlike theoretical tutorials, we actually deployed custom RAG agents and multi-model workflows. The placement cell scheduled 4 interviews in my first month after completing the capstone.",
-    highlight: "Placement within 30 days"
+    id: "batch-2",
+    label: "Batch 2",
+    date: "15 December 2026"
   },
   {
-    id: 3,
-    name: "Vikram Malhotra",
-    role: "Lead Product Manager at Razorpay",
-    former: "Former Business Analyst",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-    rating: 5,
-    courseTaken: "Strategic Product Management",
-    review: "The live case studies were directly applicable to real high-scale fintech challenges. Learning from practitioners who are active Directors of Product makes all the difference.",
-    highlight: "Promoted to Lead PM"
-  },
-  {
-    id: 4,
-    name: "Sneha Mukherjee",
-    role: "Data Scientist at Fractal Analytics",
-    former: "Former QA Engineer",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
-    rating: 5,
-    courseTaken: "Applied Data Science & Machine Learning",
-    review: "RIS NextGen gave me the practical confidence I needed. The hands-on projects in MLOps and predictive modeling were the star highlights during my technical interviews.",
-    highlight: "Switched to Data Science"
-  },
-  {
-    id: 5,
-    name: "Rohan Varma",
-    role: "DevOps Engineer at Paytm",
-    former: "System Administrator",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-    rating: 5,
-    courseTaken: "Cloud DevOps & SRE",
-    review: "Setting up real Kubernetes clusters and automated CI/CD pipelines under senior mentorship gave me the exact production exposure required for high-paying roles.",
-    highlight: "Double Certified & Hired"
+    id: "batch-3",
+    label: "Batch 3",
+    date: "15 January 2027"
   }
 ];
 
-// FAQs data
+// Official Upcoming Courses with specified launch dates (15 Nov & 21 Nov 2026)
+export const upcomingCourses = [
+  {
+    id: "cyber-defense-01",
+    title: "Cybersecurity, Ethical Hacking & Cloud Defense Fellowship",
+    launchDate: "15 November 2026",
+    time: "100% Online Live Session: 6:00 PM IST",
+    status: "Registration Open",
+    duration: "18 Weeks",
+    category: "Technology",
+    seatsStatus: "Seats Filling Fast",
+    highlight: "Official Launch Batch 1",
+    skills: ["Network Security", "Kali Linux", "Wireshark", "Metasploit", "Cloud Security", "SIEM"]
+  },
+  {
+    id: "ai-ml-02",
+    title: "Artificial Intelligence & Machine Learning (AI/ML) Master Fellowship",
+    launchDate: "21 November 2026",
+    time: "100% Online Live Session: 6:00 PM IST",
+    status: "Registration Open",
+    duration: "16 Weeks",
+    category: "Technology",
+    seatsStatus: "Early Registration Open",
+    highlight: "Official Launch Batch 2",
+    skills: ["Python", "PyTorch", "LangChain", "Vector DBs", "RAG Systems", "MLOps"]
+  }
+];
+
+// Verified Industry Hiring Partners - Strictly verified partner companies
+export const hiringPartners = [
+  { name: "Eldeco System Indicator", tier: "Verified Partner", industry: "Systems Integration & Infrastructure" },
+  { name: "Technowise Solution Limited", tier: "Verified Partner", industry: "Enterprise IT Solutions" },
+  { name: "RISIIT Sys LLC", tier: "Verified Partner", industry: "Cloud & Cyber Architecture" }
+];
+
+// Comprehensive FAQs covering:
+// Course availability, timings, weekday/weekend schedules, enrollment, LMS access,
+// recorded sessions, expert mentorship, certificates, career opportunities, payment & EMI options.
 export const faqs = [
   {
-    question: "How are classes conducted at RIS NextGen?",
-    answer: "All our premier cohorts are conducted via live, interactive online sessions with senior industry practitioners. You can ask questions in real-time, participate in live coding, and collaborate with peers. All sessions are recorded and uploaded within 2 hours with lifetime access."
+    id: "faq-remote-model",
+    question: "Is training conducted online, or do you have physical centers?",
+    answer: "RIS NextGen operates on a 100% remote-first business model. We do not have physical office locations, branch locations, or offline training centers. All cohorts, live masterclasses at 6:00 PM IST, 1-on-1 mentor code reviews, and career counseling are delivered 100% online. Our Location: Remote / Online | Work Model: 100% Remote | Training Mode: Online."
   },
   {
-    question: "Is there guaranteed placement assistance?",
-    answer: "Yes! Our dedicated Career Support Cell provides comprehensive resume and LinkedIn optimization, 1-on-1 mock technical interviews, portfolio reviews, and direct interview scheduling with our network of 250+ top hiring partners across tech and corporate sectors."
+    id: "faq-availability",
+    question: "What courses are currently available for enrollment?",
+    answer: "Our core training programs span Cybersecurity & Cloud Defense, Artificial Intelligence & Machine Learning (AI/ML), Full Stack Software Engineering, Applied Data Science, Cloud DevOps & SRE, Database Engineering (SQL & MongoDB), and Strategic Product Management. Official upcoming launch batches commence on 15 November 2026 and 21 November 2026."
   },
   {
-    question: "What if I miss a live lecture?",
-    answer: "No problem at all! Every lecture is recorded in high definition and available on your student dashboard alongside class notes, source code, and supplementary readings. Plus, you can attend weekly doubt-clearing office hours with teaching assistants."
+    id: "faq-timings",
+    question: "What are the official live session timings?",
+    answer: "Our official interactive live masterclasses commence at 6:00 PM IST on scheduled training days. Weekday training sessions run during the evening after 5:00 PM IST to accommodate working professionals and university students."
   },
   {
-    question: "Do I receive a certificate upon course completion?",
-    answer: "Yes, you will receive an industry-recognized, verifiable digital certificate with a unique verification URL and credential ID that you can directly add to your LinkedIn profile and resume."
+    id: "faq-schedule",
+    question: "How do the Weekday and Weekend schedules work?",
+    answer: "We offer two flexible online learning tracks: (1) Weekday Schedule: Evening interactive sessions held after 5:00 PM IST with dedicated doubt resolution; (2) Weekend Schedule: Hands-on code sprints, architectural labs, and mentor consultations available from 7:00 AM to 10:00 PM IST."
   },
   {
-    question: "Are flexible EMI or installment payment plans available?",
-    answer: "Yes! We offer no-cost EMI options ranging from 3 to 12 months with leading credit/debit cards, as well as easy educational loan options through our financing partners with instant paperless approval."
+    id: "faq-enrollment",
+    question: "How does the course enrollment process work?",
+    answer: "Enrollment is a straightforward 3-step online process: (1) Select your preferred course and batch date; (2) Complete the fast-track application form with your academic/professional background; (3) Complete the tuition verification to receive immediate LMS login credentials, orientation schedules, and prerequisite materials."
   },
   {
-    question: "Can working professionals manage these courses alongside a full-time job?",
-    answer: "Absolutely. Our schedules are intentionally curated for working professionals and ambitious college students. Live classes are held on weekday evenings (after 8:00 PM IST) or on weekends, allowing you to learn without disrupting your work schedule."
+    id: "faq-lms-access",
+    question: "How do I access the LMS (Learning Management System) portal?",
+    answer: "Upon confirmed enrollment, learners receive dedicated LMS login credentials. The LMS portal allows you to access enrolled courses, view live session links, submit assignments, track module progress, and review course documentation 24/7 from any device."
+  },
+  {
+    id: "faq-recorded-sessions",
+    question: "Are recorded sessions available if I miss a live class?",
+    answer: "Yes! High-definition recordings of every live masterclass are processed and uploaded to the LMS within 2 hours of session completion. Under our strict intellectual property policy, recorded sessions are securely accessible exclusively to verified, enrolled learners."
+  },
+  {
+    id: "faq-expert-mentorship",
+    question: "What mentorship support is provided during the training?",
+    answer: "Learners receive direct weekly guidance from our 15+ verified Industry Experts who actively work as Senior Engineers, Architects, and Tech Directors. Mentorship includes 1-on-1 virtual code reviews, architectural feedback, and personal doubt-clearing sessions."
+  },
+  {
+    id: "faq-certificates",
+    question: "Do I receive an accredited certificate upon completion?",
+    answer: "Yes, graduates who successfully complete their coursework and capstone project receive an industry-recognized, verifiable digital certificate featuring a unique credential ID and verification URL to showcase on LinkedIn and professional resumes."
+  },
+  {
+    id: "faq-career-opportunities",
+    question: "What career guidance and hiring opportunities are offered?",
+    answer: "Our Career Services unit connects graduates directly with verified hiring partners including Eldeco System Indicator, Technowise Solution Limited, and RISIIT Sys LLC. We provide technical mock interviews, resume optimization, and priority interview referrals."
+  },
+  {
+    id: "faq-payments-emi",
+    question: "What payment and EMI options are available?",
+    answer: "We offer transparent fee structures with zero-cost EMI plans ranging from 3 to 12 months with leading credit cards and educational financing partners. Net banking, UPI, debit cards, and corporate sponsorship invoices are also accepted."
   }
 ];
 
-// Hiring partners logos placeholder data
-export const hiringPartners = [
-  { name: "Google", logoText: "Google" },
-  { name: "Microsoft", logoText: "Microsoft" },
-  { name: "Amazon", logoText: "Amazon" },
-  { name: "Swiggy", logoText: "Swiggy" },
-  { name: "Zomato", logoText: "Zomato" },
-  { name: "Razorpay", logoText: "Razorpay" },
-  { name: "Paytm", logoText: "Paytm" },
-  { name: "Flipkart", logoText: "Flipkart" },
-  { name: "Infosys", logoText: "Infosys" },
-  { name: "TCS", logoText: "TCS" }
-];
+// Schedule details dataset for dedicated training schedule section
+export const trainingSchedules = {
+  location: "Remote / Online",
+  workModel: "100% Remote",
+  trainingMode: "Online",
+  liveTiming: "6:00 PM IST",
+  weekday: {
+    title: "Weekday Evening Schedule",
+    timings: "Evening Sessions after 5:00 PM IST",
+    description: "Designed for working professionals and university students. Attend live interactive masterclasses without interrupting work or daytime classes.",
+    highlights: [
+      "Regular live learning and peer interaction",
+      "Official live masterclass at 6:00 PM IST",
+      "Immediate Q&A and code resolution",
+      "Recorded access uploaded within 2 hours"
+    ]
+  },
+  weekend: {
+    title: "Weekend Intensive Schedule",
+    timings: "Available from 7:00 AM to 10:00 PM IST",
+    description: "Flexible, high-impact weekend slots featuring hands-on implementation labs, capstone sprints, and 1-on-1 expert mentor reviews.",
+    highlights: [
+      "Flexible learning and session timings",
+      "Deep-dive system architecture labs",
+      "1-on-1 code reviews with Industry Experts",
+      "Dedicated doubt-clearing office hours"
+    ]
+  }
+};

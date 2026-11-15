@@ -4,42 +4,42 @@ import { Users, BookOpen, UserCheck, Building2 } from 'lucide-react';
 const statsData = [
   {
     id: 1,
-    target: 15000,
+    target: 15,
     prefix: '',
     suffix: '+',
-    label: 'Learners Empowered',
-    subtext: 'Across 28+ countries',
-    icon: Users,
-    color: '#00A8F0'
-  },
-  {
-    id: 2,
-    target: 45,
-    prefix: '',
-    suffix: '+',
-    label: 'Industry-Ready Courses',
-    subtext: 'Designed with tech leads',
-    icon: BookOpen,
-    color: '#1565C0'
-  },
-  {
-    id: 3,
-    target: 180,
-    prefix: '',
-    suffix: '+',
-    label: 'Expert Mentors',
-    subtext: 'From MAANG & Unicorns',
+    label: 'Industry Experts',
+    subtext: 'Senior tech practitioners & mentors',
     icon: UserCheck,
     color: '#0B3A8C'
   },
   {
-    id: 4,
-    target: 250,
+    id: 2,
+    target: 500,
     prefix: '',
     suffix: '+',
+    label: 'Learners',
+    subtext: 'Trained across live interactive cohorts',
+    icon: Users,
+    color: '#00A8F0'
+  },
+  {
+    id: 3,
+    target: 3,
+    prefix: '',
+    suffix: '',
     label: 'Hiring Partners',
-    subtext: 'Actively recruiting graduates',
+    subtext: 'Eldeco, Technowise & RISIIT',
     icon: Building2,
+    color: '#1565C0'
+  },
+  {
+    id: 4,
+    target: 10,
+    prefix: '',
+    suffix: '+',
+    label: 'Specialization Programs',
+    subtext: 'Cybersecurity, AI/ML, Cloud & DBs',
+    icon: BookOpen,
     color: '#00A8F0'
   }
 ];
@@ -100,14 +100,13 @@ export default function StatsCounter() {
           {statsData.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div 
-                key={stat.id} 
-                className={`flex flex-col items-center text-center group ${
-                  index > 1 ? 'pt-6 lg:pt-0' : index === 1 ? 'pt-0' : ''
-                } lg:px-4`}
+              <div
+                key={stat.id}
+                className={`flex flex-col items-center text-center group ${index > 1 ? 'pt-6 lg:pt-0' : index === 1 ? 'pt-0' : ''
+                  } lg:px-4`}
               >
                 {/* Icon Circle */}
-                <div 
+                <div
                   className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110 shadow-xs"
                   style={{ backgroundColor: '#EAF5FF', color: stat.color }}
                 >

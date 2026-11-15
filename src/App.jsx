@@ -4,17 +4,32 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
+import About from './pages/About';
+import Careers from './pages/Careers';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import EnrollModal from './components/EnrollModal';
 import CourseDetailModal from './components/CourseDetailModal';
 import LoginModal from './components/LoginModal';
 
-// Component to scroll to top automatically when route changes
+// Component to scroll to top or hash target automatically when route changes
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Allow DOM to settle before querying hash element
+      const timer = setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -80,6 +95,29 @@ export default function App() {
               />
             }
           />
+          <Route
+            path="/about"
+            element={
+              <About
+                onOpenEnroll={handleOpenEnroll}
+                onOpenCounselor={handleOpenCounselor}
+              />
+            }
+          />
+          <Route
+            path="/careers"
+            element={<Careers />}
+          />
+          <Route
+            path="/contact"
+            element={
+              <Contact
+                onOpenEnroll={handleOpenEnroll}
+                onOpenCounselor={handleOpenCounselor}
+              />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

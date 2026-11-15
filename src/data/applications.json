@@ -1,0 +1,32 @@
+[
+  {
+    "id": "APP-2026-001",
+    "opportunity": "Technical Mentor",
+    "fullName": "Siddharth Verma",
+    "email": "siddharth.v@example.com",
+    "phone": "+91 98765 43210",
+    "expertise": "Cybersecurity & Cloud Defense",
+    "experience": "6 Years",
+    "linkedin": "https://linkedin.com/in/siddharth-verma",
+    "resumeName": "Siddharth_Verma_Resume.pdf",
+    "resumeUrl": "https://drive.google.com/file/d/demo-resume-1/view",
+    "introduction": "Lead Cloud Security Architect with extensive experience in SIEM, zero-trust architectures, and mentoring engineers into SOC operations.",
+    "status": "Under Review",
+    "submittedAt": "2026-11-10T14:30:00.000Z"
+  },
+  {
+    "id": "APP-2026-002",
+    "opportunity": "Tutor",
+    "fullName": "Pooja Raghavan",
+    "email": "pooja.raghavan@example.com",
+    "phone": "+91 98111 22334",
+    "expertise": "Artificial Intelligence & Machine Learning",
+    "experience": "5 Years",
+    "linkedin": "https://linkedin.com/in/pooja-raghavan",
+    "resumeName": "Pooja_Raghavan_CV.pdf",
+    "resumeUrl": "https://drive.google.com/file/d/demo-resume-2/view",
+    "introduction": "Staff ML Engineer specializing in PyTorch and autonomous multi-agent pipelines. Passionate about hands-on live teaching and project guidance.",
+    "status": "Interview Scheduled",
+    "submittedAt": "2026-11-12T09:15:00.000Z"
+  }
+]

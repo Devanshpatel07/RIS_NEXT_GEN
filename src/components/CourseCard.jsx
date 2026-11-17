@@ -109,11 +109,13 @@ export default function CourseCard({ course, onEnroll, onViewDetails, showPrice 
           </div>
         )}
 
-        {/* Next batch pill */}
+        {/* Live session timing pill (No dates) */}
         {nextBatch && (
           <div className="text-[11px] text-[#0B3A8C] bg-[#EAF5FF]/60 px-2.5 py-1 rounded-md mb-4 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-xs bg-[#00A8F0]"></span>
-            <span className="font-medium">{nextBatch}</span>
+            <span className="font-medium">
+              {nextBatch.replace(/Starts\s+\d+(?:st|nd|rd|th)?\s+[A-Za-z]+(\s+\d{4})?\s*/i, '').replace(/^\(|\)$/g, '').trim() || 'Live Sessions at 6:00 PM IST'}
+            </span>
           </div>
         )}
 

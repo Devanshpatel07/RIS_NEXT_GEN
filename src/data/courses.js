@@ -9,7 +9,6 @@ export const COURSE_CATEGORIES = [
   "Design"
 ];
 
-// Official Launch Dates: 15 November 2026 & 21 November 2026
 // Course Sequence: 1. Cybersecurity, 2. AI/ML, 3. Other courses according to relevance.
 export const courses = [
   {
@@ -22,13 +21,13 @@ export const courses = [
     price: 36999,
     oldPrice: 55999,
     enrolledCount: "120+ Enrolled",
-    badge: "Upcoming Launch • 15 Nov",
+    badge: "Flagship Program",
     isFeatured: true,
     isUpcoming: true,
-    launchDate: "15 November 2026",
+    launchDate: "Admissions Open",
     registrationStatus: "Registration Open",
     level: "Intermediate",
-    nextBatch: "Starts 15th Nov 2026 (Live 6:00 PM IST)",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Network Security", "Kali Linux", "Wireshark", "Metasploit", "Cloud Security", "SIEM"],
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
@@ -43,13 +42,13 @@ export const courses = [
     price: 44999,
     oldPrice: 69999,
     enrolledCount: "140+ Enrolled",
-    badge: "Upcoming Launch • 21 Nov",
+    badge: "Master Fellowship",
     isFeatured: true,
     isUpcoming: true,
-    launchDate: "21 November 2026",
+    launchDate: "Admissions Open",
     registrationStatus: "Registration Open",
     level: "Intermediate",
-    nextBatch: "Starts 21st Nov 2026 (Live 6:00 PM IST)",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Python", "PyTorch", "LangChain", "Vector DBs", "RAG Systems", "MLOps"],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
@@ -70,7 +69,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Beginner to Advanced",
-    nextBatch: "Starts 28th Nov 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening (Post 5 PM) & Weekend Flexible",
     skills: ["React", "Node.js", "Docker", "AWS", "PostgreSQL", "Microservices"],
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
@@ -91,7 +90,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "All Levels",
-    nextBatch: "Starts 30th Nov 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Python", "Pandas", "Scikit-Learn", "Apache Spark", "Tableau", "MLOps"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
@@ -112,7 +111,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Intermediate to Advanced",
-    nextBatch: "Starts 5th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Kubernetes", "Terraform", "CI/CD", "Docker", "Prometheus", "AWS EKS"],
     image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80"
@@ -133,7 +132,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Beginner to Intermediate",
-    nextBatch: "Starts 8th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["PostgreSQL", "Oracle Database", "SQL", "MongoDB", "Indexing", "Query Tuning"],
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80"
@@ -154,7 +153,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Beginner to Intermediate",
-    nextBatch: "Starts 10th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Sessions",
     skills: ["Product Strategy", "Wireframing", "A/B Testing", "Agile", "Metrics & KPIs"],
     image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
@@ -175,7 +174,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Intermediate",
-    nextBatch: "Starts 12th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Sessions",
     skills: ["React Native", "Expo", "Redux Toolkit", "Native Modules", "App Store CI/CD"],
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"
@@ -196,7 +195,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Beginner Friendly",
-    nextBatch: "Starts 15th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Labs",
     skills: ["Figma", "Design Tokens", "User Research", "Prototyping", "Micro-interactions"],
     image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
@@ -217,7 +216,7 @@ export const courses = [
     launchDate: "Ongoing Admissions",
     registrationStatus: "Registration Open",
     level: "Intermediate to Advanced",
-    nextBatch: "Starts 18th Dec 2026",
+    nextBatch: "Live Sessions at 6:00 PM IST",
     scheduleType: "Weekday Evening & Weekend Sessions",
     skills: ["Financial Modeling", "Valuation", "LBO", "Equity Research", "Fintech APIs"],
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
@@ -244,30 +243,30 @@ export const RESERVATION_BATCHES = [
   }
 ];
 
-// Official Upcoming Courses with specified launch dates (15 Nov & 21 Nov 2026)
+// Official Upcoming Courses with scheduled enrollment
 export const upcomingCourses = [
   {
     id: "cyber-defense-01",
     title: "Cybersecurity, Ethical Hacking & Cloud Defense Fellowship",
-    launchDate: "15 November 2026",
+    launchDate: "Admissions Open",
     time: "100% Online Live Session: 6:00 PM IST",
     status: "Registration Open",
     duration: "18 Weeks",
     category: "Technology",
     seatsStatus: "Seats Filling Fast",
-    highlight: "Official Launch Batch 1",
+    highlight: "Official Cohort Batch 1",
     skills: ["Network Security", "Kali Linux", "Wireshark", "Metasploit", "Cloud Security", "SIEM"]
   },
   {
     id: "ai-ml-02",
     title: "Artificial Intelligence & Machine Learning (AI/ML) Master Fellowship",
-    launchDate: "21 November 2026",
+    launchDate: "Admissions Open",
     time: "100% Online Live Session: 6:00 PM IST",
     status: "Registration Open",
     duration: "16 Weeks",
     category: "Technology",
     seatsStatus: "Early Registration Open",
-    highlight: "Official Launch Batch 2",
+    highlight: "Official Cohort Batch 2",
     skills: ["Python", "PyTorch", "LangChain", "Vector DBs", "RAG Systems", "MLOps"]
   }
 ];
@@ -291,7 +290,7 @@ export const faqs = [
   {
     id: "faq-availability",
     question: "What courses are currently available for enrollment?",
-    answer: "Our core training programs span Cybersecurity & Cloud Defense, Artificial Intelligence & Machine Learning (AI/ML), Full Stack Software Engineering, Applied Data Science, Cloud DevOps & SRE, Database Engineering (SQL & MongoDB), and Strategic Product Management. Official upcoming launch batches commence on 15 November 2026 and 21 November 2026."
+    answer: "Our core training programs span Cybersecurity & Cloud Defense, Artificial Intelligence & Machine Learning (AI/ML), Full Stack Software Engineering, Applied Data Science, Cloud DevOps & SRE, Database Engineering (SQL & MongoDB), and Strategic Product Management. Live interactive cohorts are enrolling now with scheduled live sessions at 6:00 PM IST."
   },
   {
     id: "faq-timings",

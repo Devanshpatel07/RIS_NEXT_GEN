@@ -483,7 +483,7 @@ export default function Home({ onOpenEnroll, onOpenCounselor, onViewDetails }) {
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold text-white mb-6">
                 <Sparkles className="w-3.5 h-3.5 text-[#00A8F0]" />
-                <span>Official Launches: 15 & 21 November 2026</span>
+                <span>New Cohorts Enrolling Now • Live Sessions at 6:00 PM IST</span>
               </div>
 
               <h2 className="font-['Rajdhani'] font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6">

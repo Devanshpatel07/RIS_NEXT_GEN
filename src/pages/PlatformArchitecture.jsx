@@ -108,7 +108,7 @@ const architectureLayers = [
     status: "Core Live / Extensible",
     components: [
       { name: "Application Management", desc: "Review candidate profiles, filter by domain expertise, and schedule interviews.", status: "Live" },
-      { name: "Course Schedule Management", desc: "Configure official launch dates (15 Nov, 21 Nov) and seat availability.", status: "Live" },
+      { name: "Course Schedule Management", desc: "Configure cohort launch schedules, live timings, and seat availability.", status: "Live" },
       { name: "Student Enrollment Governance", desc: "Approve fast-track admissions and grant role-based LMS access.", status: "Live" },
       { name: "Hiring Partner Integration", desc: "Manage verified relationships with partner organizations.", status: "Live" },
       { name: "Comprehensive Analytics Dashboard", desc: "Cohort completion metrics, attendance tracking, and drop-off heatmaps.", status: "Planned" }

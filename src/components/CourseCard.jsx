@@ -38,9 +38,7 @@ export default function CourseCard({ course, onEnroll, onViewDetails, showPrice 
 
         {/* Badge (Bestseller, Trending, etc.) */}
         {badge && (
-          <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#0B3A8C] to-[#1565C0] shadow-md border border-white/20 backdrop-blur-xs">
-            <Sparkles className="w-3 h-3 text-[#00A8F0]" />
-            <span>{badge}</span>
+          <div>
           </div>
         )}
 

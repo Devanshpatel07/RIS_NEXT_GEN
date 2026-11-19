@@ -214,7 +214,7 @@ export default function Footer() {
             <span>&bull;</span>
             <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
             <span>&bull;</span>
-            <a href="#honor" className="hover:text-white transition-colors">Honor Code</a>
+            <a href="#Disclaimers" className="hover:text-white transition-colors">Disclaimers</a>
             <span>&bull;</span>
             <a href="#refund" className="hover:text-white transition-colors">Refund Policy</a>
 

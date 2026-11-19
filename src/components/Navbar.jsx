@@ -36,21 +36,6 @@ export default function Navbar({ onOpenEnroll, onOpenLogin, onOpenCounselor }) {
 
   return (
     <>
-      {/* Top micro announcement bar */}
-      <div className="bg-gradient-to-r from-[#0B3A8C] via-[#1565C0] to-[#00A8F0] text-white text-[11px] sm:text-xs font-medium py-1.5 px-3 sm:px-4 text-center tracking-wide flex items-center justify-center gap-1.5 w-full max-w-full overflow-hidden">
-        <div className="flex items-center gap-1.5 truncate max-w-full justify-center">
-
-          {/* <span className="truncate">
-            Winter 2026 Cohorts: <strong>35% Early Bird Scholarship</strong>
-          </span> */}
-          <button
-            onClick={() => onOpenEnroll?.()}
-            className="shrink-0 hidden xs:inline-flex sm:inline-flex items-center gap-1 underline underline-offset-2 hover:text-[#EAF5FF] font-bold ml-1 cursor-pointer"
-          >
-            Claim Seat <ArrowRight className="w-3 h-3" />
-          </button>
-        </div>
-      </div>
 
       {/* Main Sticky Navbar */}
       <header

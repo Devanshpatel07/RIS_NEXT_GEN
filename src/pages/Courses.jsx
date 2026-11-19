@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { 
-  Search, 
-  SlidersHorizontal, 
-  CheckCircle2, 
-  ArrowRight, 
-  Sparkles, 
-  PhoneCall, 
+import {
+  Search,
+  SlidersHorizontal,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  PhoneCall,
   ChevronRight,
   GraduationCap,
   Users,
@@ -82,11 +82,11 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
 
   return (
     <div className="min-h-screen bg-slate-50/50">
-      
+
       {/* 1. PAGE HEADER & BREADCRUMB */}
       <section className="bg-gradient-to-b from-[#EAF5FF] via-[#EAF5FF]/60 to-transparent pt-10 pb-12 border-b border-[#D8E8F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Breadcrumb (Home > Courses) */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold text-[#5B6B82] mb-4">
             <Link to="/" className="hover:text-[#0B3A8C] transition-colors">
@@ -104,10 +104,6 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#CDE3FB] text-xs font-bold text-[#0B3A8C] mb-3">
-                <Sparkles className="w-3 h-3 text-[#00A8F0]" />
-                <span>Industry-Curated Curriculum</span>
-              </div>
               <h1 className="font-['Rajdhani'] font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#0A1A33] tracking-tight">
                 Explore Our{' '}
                 <span className="bg-gradient-to-r from-[#0B3A8C] via-[#1565C0] to-[#00A8F0] bg-clip-text text-transparent">
@@ -149,7 +145,7 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
       <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-[#E1ECF8] shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-            
+
             {/* Category Chips / Tabs */}
             <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
               {COURSE_CATEGORIES.map((cat) => {
@@ -158,11 +154,10 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
                   <button
                     key={cat}
                     onClick={() => handleCategoryChange(cat)}
-                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                      isActive
-                        ? 'bg-gradient-to-r from-[#0B3A8C] to-[#1565C0] text-white shadow-sm shadow-[#0B3A8C]/20'
-                        : 'bg-slate-100 text-[#5B6B82] hover:bg-[#EAF5FF] hover:text-[#0B3A8C]'
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer ${isActive
+                      ? 'bg-gradient-to-r from-[#0B3A8C] to-[#1565C0] text-white shadow-sm shadow-[#0B3A8C]/20'
+                      : 'bg-slate-100 text-[#5B6B82] hover:bg-[#EAF5FF] hover:text-[#0B3A8C]'
+                      }`}
                   >
                     {cat}
                   </button>
@@ -199,7 +194,7 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
       {/* 3. COURSE GRID (3 COLUMNS DESKTOP, 2 TABLET, 1 MOBILE) */}
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCourses.map((course) => (
@@ -240,12 +235,12 @@ export default function Courses({ onOpenEnroll, onOpenCounselor, onViewDetails }
       <section className="py-16 md:py-24 bg-[#EAF5FF]/60 border-y border-[#D8E8F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#D8E8F8] shadow-xl shadow-[#0B3A8C]/5 overflow-hidden relative">
-            
+
             {/* Background decorative corner gradient */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00A8F0]/10 to-transparent pointer-events-none rounded-bl-full" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-              
+
               {/* Left Column: Reassurance */}
               <div className="lg:col-span-6">
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EAF5FF] border border-[#CBE5FC] text-xs font-bold text-[#0B3A8C] mb-4">
